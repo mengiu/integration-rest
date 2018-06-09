@@ -1,0 +1,8 @@
+
+apply plugin: 'war'
+
+jar.enabled = true
+description = ''
+dependencies {
+  compile project(':integration-rest-jar')
+}

@@ -1,0 +1,6 @@
+
+description = ''
+dependencies {
+  compile project(':integration-rest-war')
+    compileOnly group: 'javax', name: 'javaee-api', version:'7.0'
+}
