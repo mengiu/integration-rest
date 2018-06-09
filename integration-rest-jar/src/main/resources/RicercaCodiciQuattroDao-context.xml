@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ricercaCodiciQuattroEntity" class="it.eng.visage.dao.EntityMeta">
+        <constructor-arg>
+            <value>OAOT4</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="tablePrefixName" />
+        </constructor-arg>
+        <constructor-arg>
+            <value>codice</value>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="codice" value="CODICE" />
+                <entry key="valoKeyNum" value="VALO_KEY_NUM" />
+                <entry key="valoKeyTxt" value="VALO_KEY_TXT" />
+            </map>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <value>GRUPPO</value>
+                <value>AZIENDA</value>
+                <value>CODICE</value>
+                <value>TIPO_KEY</value>
+                <value>DATA_INIZIO</value>
+                <value>DATA_FINE</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="ricercaCodiciQuattroDao" class="com.intesasanpaolo.diwa0.dao.RicercaCodiciQuattroDao">
+        <property name="entityMeta">
+            <ref bean="ricercaCodiciQuattroEntity"/>
+        </property>
+    </bean>
+
+</beans>

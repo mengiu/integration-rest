@@ -1,0 +1,51 @@
+
+description = ''
+dependencies {
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.3.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-tx', version:'4.3.5.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-config', version:'4.2.2.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-web', version:'4.2.2.RELEASE'
+    compile group: 'org.json', name: 'json', version:'20160810'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.8.5'
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'
+    compile group: 'org.modelmapper', name: 'modelmapper', version:'0.7.7'
+    compile group: 'net.sf.oval', name: 'oval', version:'1.86'
+    compile group: 'joda-time', name: 'joda-time', version:'2.9.9'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.4.10'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version:'1.7.21'
+    compile(group: 'io.springfox', name: 'springfox-swagger2', version:'2.6.0') {
+exclude(module: 'mapstruct')
+    }
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version:'2.6.0'
+    compile group: 'it.eng.sclibs.visage.liste', name: 'liste-microservice-business', version:'1.0.24'
+    compile group: 'it.eng.sclibs.visage.gestionedomini', name: 'gestione-domini-business', version:'1.0.34'
+    compile group: 'it.eng.sclibs.visage.rapporti', name: 'microservice-rapporti-business', version:'1.0.35'
+    compile group: 'it.eng.sclibs.visage.rapporti', name: 'microservice-rapporti-client-classpath', version:'1.0.35'
+    compile group: 'it.eng.sclibs.visage.controparti', name: 'microservice-controparti-business', version:'1.1.39'
+    compile group: 'it.eng.sclibs.visage.controparti', name: 'microservice-controparti-client-classpath', version:'1.1.39'
+    compile group: 'it.eng.sclibs.visage.gruppi', name: 'microservice-gruppi-business', version:'0.0.27'
+    compile group: 'it.eng.sclibs.visage.motori', name: 'microservice-motori-business', version:'1.0.30'
+    compile group: 'it.eng.sclibs.visage.motori', name: 'microservice-motori-client-classpath', version:'1.0.30'
+    compile group: 'it.eng.sclibs.visage.documenti', name: 'documenti-business', version:'1.0.31'
+    compile group: 'it.eng.sclibs.visage.datiparticolari', name: 'dati-particolari-business', version:'1.0.26'
+    compile group: 'it.eng.sclibs.visage.contatti', name: 'microservice-contatti-business', version:'1.0.30'
+    compile group: 'it.eng.sclibs.visage.ricerca-anagrafica', name: 'ricerca-anagrafica-business', version:'0.0.25'
+    compile group: 'it.eng.sclibs.visage.censimento', name: 'microservice-censimento-business', version:'1.0.10'
+    compile group: 'it.eng.sclibs.eventmanager', name: 'client', version:'1.0.10'
+    compile group: 'it.eng.sclibs.eventmanager', name: 'client-classpath', version:'1.0.10'
+    compile group: 'it.eng.sclibs.visage.rule-engine', name: 'validation-adapter', version:'1.0.33'
+    compile group: 'it.eng.sclibs.visage.rule-engine', name: 'rule-engine-client-classpath', version:'1.0.33'
+    compile group: 'it.eng.sclibs.visage.completezzadati', name: 'microservice-completezza-dati', version:'1.0.9'
+    compile group: 'it.eng.sclibs.visage.utility', name: 'utility-service-client-classpath', version:'1.0.35'
+    compile group: 'it.eng.sclibs.visage.isp', name: 'latinizzatore', version:'1.0'
+    testCompile group: 'org.springframework', name: 'spring-test', version:'4.3.5.RELEASE'
+    testCompile group: 'org.springframework.security', name: 'spring-security-test', version:'4.2.2.RELEASE'
+    testCompile group: 'org.easytesting', name: 'fest-assert', version:'1.4'
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    testCompile group: 'com.jayway.jsonpath', name: 'json-path', version:'2.2.0'
+//    compile files("$System.env.JAVA_HOME" + 'C:/liberty/usr/servers/defaultServer/lib/global/Y1AUTO_API_Client-1.7-0.jar')
+    compile files('C:/liberty/usr/servers/defaultServer/lib/global/Y1AUTO_API_Client-1.7-0.jar')
+    compile files('C:/liberty/usr/servers/defaultServer/lib/global/Y1UtilityClass-1.7-0.jar')
+//    System group: 'com.intesasanpaolo.Y1', name: 'Y1AUTO_API_Client', version:'1.7-0'
+//    System group: 'com.intesasanpaolo.Y1', name: 'Y1UtilityClass', version:'1.7-0'
+}

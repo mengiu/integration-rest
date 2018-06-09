@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ricercaTriplettaCodiciEntity" class="it.eng.visage.dao.EntityMeta">
+        <constructor-arg>
+            <value>TRIPLETTA</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="tablePrefixName"/>
+        </constructor-arg>
+        <constructor-arg>
+            <array>
+                <value>codiceComune</value>
+                <value>valoKeyTxt</value>
+                <value>codiceProvincia</value>
+                <value>codiceNazione</value>
+            </array>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="codiceComune" value="COD_COMUNE"/>
+                <entry key="valoKeyTxt" value="VALO_KEY_TXT"/>
+                <entry key="codiceProvincia" value="COD_PROVINCIA"/>
+                <entry key="codiceNazione" value="COD_NAZIONE"/>
+            </map>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="ricercaTriplettaCodiciDao" class="com.intesasanpaolo.diwa0.dao.RicercaTriplettaCodiciDao">
+        <property name="entityMeta">
+            <ref bean="ricercaTriplettaCodiciEntity"/>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/util
+                http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor">
+        <property name="validatorFactory">
+            <ref bean="validatorFactoryBean" />
+        </property>
+        <property name="validator">
+            <ref bean="validatorFactoryBean" />
+        </property>
+    </bean>
+
+    <bean id="validatorFactoryBean" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+
+    <bean id="fonteAzioneProvider" class="it.eng.visage.validation.FonteAzioneProviderPojoImpl">
+        <property name="fonte">
+            <value/>
+        </property>
+    </bean>
+
+    <util:properties id="securityProperties" location="classpath:jwt.properties" />
+
+    <bean class="it.eng.sclibs.visage.ruleengine.validation.Adapter">
+        <property name="api">
+            <bean class="it.eng.sclibs.visage.ruleengine.client.RulesetApi">
+                <constructor-arg>
+                    <bean class="it.eng.sclibs.visage.utility.client.impl.TestruleApi" />
+                </constructor-arg>
+                <constructor-arg>
+                    <map>
+                        <entry key="it.eng.sclibs.visage.model.LegamiNormativiEInformativi">
+                            <value>#{legamiEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.model.AssociazioneEntitaLista">
+                            <value>#{associazioneEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.model.EntitaListeDetail">
+                            <value>#{entitaListeEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.model.EntitaListeHeader">
+                            <value>#{entitaListeHeaderEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.model.ParametriRicercaCodici" value-ref="mappa"/>
+                        <entry key="it.eng.sclibs.visage.contatti.model.Account">
+                            <value>#{accountEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.AccountRelazioni">
+                            <value>#{accountRelazioniMapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.TelefoniControparte">
+                            <value>#{telefoniEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.TelefonoRelazioni">
+                            <value>#{telefonoRelazioniMapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.IndirizziControparte">
+                            <value>#{indirizziEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.IndirizzoRelazioni">
+                            <value>#{indirizzoRelazioniMapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.EmailControparte">
+                            <value>#{emailEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.EmailRelazioni">
+                            <value>#{emailRelazioniMapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.IntestazioniControparte">
+                            <value>#{intestazioniControparteEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.RelazioneContatti">
+                            <value>#{relazioneContattiEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.GeoreferenziazioneIndirizzi">
+                            <value>#{georefEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.censimento.model.CensimentoControparte">
+                            <value>#{censimentoControparte}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.AggiornamentoTitolariEffettivi">
+                            <value>#{aggiornamentoTitolariEffettivi}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.IndirizzoUsi">
+                            <value>#{mappingIndirizziUsi}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.Account">
+                            <value>#{accountEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.TelefoniControparte">
+                            <value>#{telefoniEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.IndirizziControparte">
+                            <value>#{indirizziEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.EmailControparte">
+                            <value>#{emailEntityMeta.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.TelefonoUsi">
+                            <value>#{mappingTelefoniUsi}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.AccountUsi">
+                            <value>#{mappingAccountUsi}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.contatti.model.EmailUsi">
+                            <value>#{mappingMailUsi}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.StatusNdgControparte">
+                            <value>#{statusNdgControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.StatusNdgControparteDetail">
+                            <value>#{statusNdgControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.SettoriEconomiciControparte">
+                            <value>#{settoriEconomiciControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.SettoriEconomiciControparteDetail">
+                            <value>#{settoriEconomiciControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.CodiciVariControparte">
+                            <value>#{codiciVariControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.CodiciVariControparteDetail">
+                            <value>#{codiciVariControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.DatiAnagraficiControparte">
+                            <value>#{datiAnagraficiControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.DatiComplementariControparte">
+                            <value>#{datiComplementariControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.DatiComplementariControparteDetail">
+                            <value>#{datiComplementariControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.DatiPrivacyControparte">
+                            <value>#{datiPrivacyControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.DatiPrivacyControparteDetail">
+                            <value>#{datiPrivacyControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.RuoliControparte">
+                            <value>#{ruoliControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.RuoliControparteDetail">
+                            <value>#{ruoliControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.EspansioneContenutoInformativoControparte">
+                            <value>#{espansioneContenutoInformativoControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.EspansioneContenutoInformativoControparteDetail">
+                            <value>#{espansioneContenutoInformativoControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.DatiVariControparte">
+                            <value>#{datiVariControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.DatiVariControparteDetail">
+                            <value>#{datiVariControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.NotizieNegativeControparte">
+                            <value>#{notizieNegativeControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.NotizieNegativeControparteDetail">
+                            <value>#{notizieNegativeControparte.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.OrdinamentoAlternativoNdg">
+                            <value>#{ordinamentoAlternativoEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.VariazioneDatiAnagraficiTipoNdg">
+                            <value>#{variazioneDatiAnagraficiTipoNdg}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.datiparticolari.model.NdgScudati">
+                            <value>#{scudatiEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.datiparticolari.model.NdgScudatiForUpdate">
+                            <value>#{ndgScudatiUpdateEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.documenti.model.Documenti">
+                            <value>#{documentiEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.RelazioniAnagrafiche">
+                            <value>#{relazioniAnagraficheEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.RapportoAttributiStatus">
+                            <value>#{gestioneNuovoRapporto}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.GestioneRapporti">
+                            <value>#{gestioneRapporto}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.AttributiDiRapporto">
+                            <value>#{attributiDiRapportoEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.DatiCommercialiPerRapporto">
+                            <value>#{datiCommercialiPerRapporto.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.EspansioneContenutoInformativoRapporto">
+                            <value>#{EspansioneContenutoInformativoRapporto.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.GestoriALivelloDiRapporto">
+                            <value>#{gestoriLivRapportoEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.GruppiDiFirma">
+                            <value>#{gruppiFirmaEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.NoteDiRapporto">
+                            <value>#{noteDiRapporto.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.NoteDiRapportoDetail">
+                            <value>#{noteDiRapporto.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.PotereDiFirma">
+                            <value>#{potereDiFirmaEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.Rapporti">
+                            <value>#{rapportiEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.RelazioniContabili">
+                            <value>#{relazioniContabiliEntity.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.StatusDiRapporto">
+                            <value>#{statusDiRapporto.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.DatiComplementariDiRapporto">
+                            <value>#{datiComplementariRapporto.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.rapporti.model.DatiComplementariDiRapportoDetail">
+                            <value>#{datiComplementariRapporto.mapping}</value>
+                        </entry>
+                        <entry key="it.eng.sclibs.visage.controparti.model.ListaPerDetail">
+                            <value>#{aggiornamentoFatca}</value>
+                        </entry>
+                    </map>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
+
+    <util:map id="mappa">
+        <entry key="azienda" value="AZIENDA" />
+        <entry key="identificativoChiave" value="identificativoChiave" />
+        <entry key="valoreChiave" value="valoreChiave" />
+    </util:map>
+
+    <bean id="contestoAziendaProvider" class="it.eng.sclibs.visage.ruleengine.validation.IndicatoreSpecificoDominiProvider" />
+</beans>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="stage" class="java.lang.String">
+        <constructor-arg>
+            <value>${Y1.Stage}</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="schemaName" class="java.lang.String">
+        <constructor-arg>
+            <value>DB2ADMIN</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="tablePrefixName" class="java.lang.String">
+        <constructor-arg>
+            <value>DI</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="codVarioNdgOld" class="java.lang.String">
+        <constructor-arg>
+            <value>RAC</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="sportelloSize" class="java.lang.Integer">
+        <constructor-arg value="5" />
+    </bean>
+
+    <util:list id="visibilitaAzienda">
+        <value>1</value>
+    </util:list>
+
+    <util:list id="visibilitaAmbito">
+        <value>5</value>
+    </util:list>
+
+    <util:list id="visibilitaGruppo">
+        <value>9</value>
+    </util:list>
+
+    <util:map id="mappingVisibilita" key-type="java.lang.String" value-type="java.util.List" >
+        <entry key="AZIENDA" value-ref="visibilitaAzienda" />
+        <entry key="AMBITO" value-ref="visibilitaAmbito" />
+        <entry key="GRUPPO" value-ref="visibilitaGruppo" />
+    </util:map>
+
+    <bean id="fieldTipoCompletezza" class="java.lang.String">
+        <constructor-arg>
+            <value>tipoNdg</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="codiceNazioneItalia" class="java.lang.Long">
+        <constructor-arg>
+            <value>999000</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="ruoloCliente" class="java.lang.String">
+        <constructor-arg value="CUST"/>
+    </bean>
+
+    <bean id="codiceCollegamentoCointestato" class="java.lang.String">
+        <constructor-arg value="GCO"/>
+    </bean>
+
+    <bean id="relazioneAnagraficaSize" class="java.lang.Integer">
+        <constructor-arg value="5" />
+    </bean>
+
+    <bean id="raggruppamentoEspSize" class="java.lang.Integer">
+        <constructor-arg value="8" />
+    </bean>
+
+    <bean id="fiduciaria" class="java.lang.String">
+        <constructor-arg value="FIDUCIAR" />
+    </bean>
+
+    <bean id="apostolica" class="java.lang.String">
+        <constructor-arg value="APSA" />
+    </bean>
+
+    <bean id="discriminanteRapporto" class="java.lang.String">
+        <constructor-arg value="STD" />
+    </bean>
+
+    <bean id="tipoRapSize" class="java.lang.Integer">
+        <constructor-arg value="2" />
+    </bean>
+
+    <bean id="topLimitElencoVariazioni" class="java.lang.Integer">
+        <constructor-arg>
+            <value>100</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="intestINSize" class="java.lang.Long">
+        <constructor-arg>
+            <value>640</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="intestQLSize" class="java.lang.Long">
+        <constructor-arg>
+            <value>64</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="ambitoDefault" class="java.lang.Long" >
+        <constructor-arg>
+            <value>90000</value>
+        </constructor-arg>
+    </bean>
+
+    <util:list id="listaAziendeADG" value-type="java.lang.Long">
+        <value>80043</value>
+        <value>80044</value>
+        <value>80045</value>
+        <value>80046</value>
+        <value>80048</value>
+        <value>80050</value>
+        <value>80052</value>
+        <value>80053</value>
+        <value>80054</value>
+        <value>80055</value>
+        <value>80069</value>
+        <value>20001</value>
+        <value>33712</value>
+        <value>80007</value>
+        <value>80013</value>
+        <value>80014</value>
+        <value>80015</value>
+        <value>80016</value>
+        <value>80020</value>
+        <value>80023</value>
+        <value>80024</value>
+        <value>80025</value>
+        <value>80026</value>
+        <value>80027</value>
+        <value>80030</value>
+        <value>80031</value>
+        <value>80032</value>
+        <value>80033</value>
+        <value>80034</value>
+        <value>80035</value>
+        <value>80036</value>
+        <value>80037</value>
+        <value>80038</value>
+        <value>80039</value>
+        <value>80040</value>
+        <value>80041</value>
+        <value>80042</value>
+        <value>80093</value>
+        <value>80094</value>
+        <value>35</value>
+        <value>37</value>
+        <value>38</value>
+        <value>3239</value>
+    </util:list>
+</beans>

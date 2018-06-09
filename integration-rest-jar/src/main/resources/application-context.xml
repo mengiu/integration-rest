@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="it.eng.sclibs.visage.censimento.service" />
+    <context:component-scan base-package="it.eng.sclibs.visage.completezzadati.service" />
+    <context:component-scan base-package="it.eng.sclibs.visage.contatti.service" />
+    <context:component-scan base-package="it.eng.sclibs.visage.controparti.service" />
+    <context:component-scan base-package="it.eng.sclibs.visage.datiparticolari.service" />
+    <context:component-scan base-package="it.eng.sclibs.visage.documenti.service" />
+    <context:component-scan base-package="it.eng.sclibs.visage.gestionedomini.internalService" />
+    <context:component-scan base-package="it.eng.sclibs.visage.gestionedomini.service" />
+    <context:component-scan base-package="it.eng.sclibs.visage.gestionedomini.utils" />
+    <context:component-scan base-package="it.eng.sclibs.visage.rapporti.service" />
+    <context:component-scan base-package="it.eng.sclibs.visage.rule.engine.services" />
+    <context:component-scan base-package="it.eng.sclibs.visage.rule.engine.util" />
+    <context:component-scan base-package="it.eng.sclibs.visage.statondg.service" />
+
+    <import resource="classpath:Completezza-GenericEntityControparte-Context.xml" />
+    <import resource="classpath:StatoNdg-GenericEntityControparte-Context.xml" />
+
+    <import resource="classpath:AccountDao-context.xml" />
+    <import resource="classpath:AccountDescrizioniDao-context.xml" />
+    <import resource="classpath:AlberaturaDocumentoDao-context.xml" />
+    <import resource="classpath:AllegatoDao-context.xml" />
+    <import resource="classpath:AnagrafeDiGruppoDao-context.xml" />
+    <import resource="classpath:AssociazioneEntitaListaDao-context.xml" />
+    <import resource="classpath:AssociazioneNdgChiaviCognomiDao-context.xml" />
+    <import resource="classpath:AssociazioneNdgChiaviNomiDao-context.xml" />
+    <import resource="classpath:AssociazioneNdgIntetazioniSocietaDao-context.xml" />
+    <import resource="classpath:AttributiDiRapportoDao-context.xml" />
+    <import resource="classpath:AttributiRegolaDao-context.xml" />
+    <import resource="classpath:AttributiRapportoListDao-context.xml" />
+    <import resource="classpath:AttributiTerritoriDao-context.xml" />
+    <import resource="classpath:AttributoDao-context.xml" />
+    <import resource="classpath:AziendeDao-context.xml" />
+    <import resource="classpath:BlocchiQDao-context.xml" />
+    <import resource="classpath:CaricaDao-context.xml" />
+    <import resource="classpath:ChiaviDiRicercaAnagraficaBaseCognomiDao-context.xml" />
+    <import resource="classpath:ChiaviDiRicercaAnagraficaBaseNomiDao-context.xml" />
+    <import resource="classpath:ChiaviDiRicercaAnagraficaBaseRagioniSocialiDao-context.xml" />
+    <import resource="classpath:ChiaveRecordDao-context.xml" />
+    <import resource="classpath:ClassificazioneNdgDao-context.xml" />
+    <import resource="classpath:CodiceCollegamentoDao-context.xml" />
+    <import resource="classpath:CodiciVariControparteConChiaveAllungataDao-context.xml" />
+    <import resource="classpath:CodiciVariControparteDao-context.xml" />
+    <import resource="classpath:CointestazioneDao-context.xml" />
+    <import resource="classpath:CollegamentiPresentiDao-context.xml" />
+    <import resource="classpath:CollegamentiPresentiListaInquiryDao-context.xml" />
+    <import resource="classpath:CollegamentiTitolareEffettivoDao-context.xml" />
+    <import resource="classpath:CollegamentiTitolareEffettivoNdgCriptatiDao-context.xml" />
+    <import resource="classpath:ColonnaChiaveDao-context.xml" />
+    <import resource="classpath:Completezza-GenericDao-context.xml" />
+    <import resource="classpath:CondizioneClassificazioneDao-context.xml" />
+    <import resource="classpath:ContatoriPraticheDao-context.xml" />
+    <import resource="classpath:ContattiDao-context.xml" />
+    <import resource="classpath:ContattoCompatibileDao-context.xml" />
+    <import resource="classpath:ContattoDaRapportoDao-context.xml" />
+    <import resource="classpath:DatiAnagraficiControparteDao-context.xml" />
+    <import resource="classpath:DatiAnagraficiControparteMLDao-context.xml" />
+    <import resource="classpath:DatiCommercialiControparteDao-context.xml" />
+    <import resource="classpath:DatiCommercialiPerRapportoDao-context.xml" />
+    <import resource="classpath:DatiComplementariControparteDao-context.xml" />
+    <import resource="classpath:DatiComplementariDiRapportoDao-context.xml" />
+    <import resource="classpath:DatiPerCompletezzaDao-context.xml" />
+    <import resource="classpath:DatiPrivacyControparteDao-context.xml" />
+    <import resource="classpath:DatiUlterioriControparteDao-context.xml" />
+    <import resource="classpath:DatiVariControparteDao-context.xml" />
+    <import resource="classpath:DescrizioniTerritoriDao-context.xml" />
+    <import resource="classpath:DiRaccordoSndgNdgDao-context.xml" />
+    <import resource="classpath:DivisaDao-context.xml" />
+    <import resource="classpath:DizionarioCognomiDao-context.xml" />
+    <import resource="classpath:DizionarioIntestazioniSocietaDao-context.xml" />
+    <import resource="classpath:DizionarioNomiDao-context.xml" />
+    <import resource="classpath:DocumentiDao-context.xml" />
+    <import resource="classpath:DocumentiAllegatiDao-context.xml" />
+    <import resource="classpath:DocumentiAltroDao-context.xml" />
+    <import resource="classpath:DocumentiInseribiliDao-context.xml" />
+    <import resource="classpath:EmailControparteDao-context.xml" />
+    <import resource="classpath:EmailControparteDescrizioniDao-context.xml" />
+    <import resource="classpath:EntitaListeDetailDao-context.xml" />
+    <import resource="classpath:EntitaListeHeaderDao-context.xml" />
+    <import resource="classpath:EsitiMotoriDao-context.xml" />
+    <import resource="classpath:EsitoAbbinamentoDao-context.xml" />
+    <import resource="classpath:EspansioneContenutoInformativoControparteAltroDao-context.xml" />
+    <import resource="classpath:EspansioneContenutoInformativoControparteDao-context.xml" />
+    <import resource="classpath:EspansioneContenutoInformativoRapportoDao-context.xml" />
+    <import resource="classpath:EstinzioneControparteDao-context.xml" />
+    <import resource="classpath:EstinzioneRapportoDao-context.xml" />
+    <import resource="classpath:EtichetteLocaliRuleDao-context.xml" />
+    <import resource="classpath:ExportDao-context.xml" />
+    <import resource="classpath:FormaTecnicaDao-context.xml" />
+    <import resource="classpath:GeoreferenziazioneIndirizziDao-context.xml" />
+    <import resource="classpath:GerarchiaTerritorialeDao-context.xml" />
+    <import resource="classpath:GestoriALivelloDiRapportoDao-context.xml" />
+    <import resource="classpath:GruppiDiFirmaDao-context.xml" />
+    <import resource="classpath:GruppiDiFirmaDao-rapporti-context.xml" />
+    <import resource="classpath:IndirizziControparteDao-context.xml" />
+    <import resource="classpath:IndirizziControparteMLDao-context.xml" />
+    <import resource="classpath:IndirizziControparteDescrizioniDao-context.xml" />
+    <import resource="classpath:InfoTabellaDao-context.xml" />
+    <import resource="classpath:InseribiliDao-context.xml" />
+    <import resource="classpath:IntestazioneAggiuntivaControparteDao-context.xml" />
+    <import resource="classpath:IntestazioniControparteDao-context.xml" />
+    <import resource="classpath:IntestazioniControparteDescrizioniDao-context.xml" />
+    <import resource="classpath:ISODao-context.xml" />
+    <import resource="classpath:LegamiDiGruppoDao-context.xml" />
+    <import resource="classpath:LegamiNormativiEInformativiDao-context.xml" />
+    <import resource="classpath:LegamiPresuntiDao-context.xml" />
+    <import resource="classpath:ListaContattiTelefoniciTipoTelefonoDao-context.xml" />
+    <import resource="classpath:ListaRelazioniSportelloDao.context.xml" />
+    <import resource="classpath:listaEntitaDescrizioni-context.xml" />
+    <import resource="classpath:MenuAbilitazioDominiDao-context.xml" />
+    <import resource="classpath:MenuClassiGRDominiDao-context.xml" />
+    <import resource="classpath:MonitoraggioInterrogazioniCervedControparteDao-context.xml" />
+    <import resource="classpath:NazioneDao-context.xml" />
+    <import resource="classpath:NdgCompletezzaDao-context.xml" />
+    <import resource="classpath:NdgScudatiDao-context.xml" />
+    <import resource="classpath:NormativaDao-context.xml" />
+    <import resource="classpath:NormativaGrpDao-context.xml" />
+    <import resource="classpath:NoteDiRapportoDao-context.xml" />
+    <import resource="classpath:NoteTitolariEffettiviDao-context.xml" />
+    <import resource="classpath:NotizieNegativeControparteDao-context.xml" />
+    <import resource="classpath:NumeroRoutineCompletezzaDao-context.xml" />
+    <import resource="classpath:OmonimoDao-context.xml" />
+    <import resource="classpath:OrdinamentoAlternativoNdgDao-context.xml" />
+    <import resource="classpath:OperazioniSpecialiDao-context.xml" />
+    <import resource="classpath:PostaInternaControparteDao-context.xml" />
+    <import resource="classpath:PotereDiFirmaDao-context.xml" />
+    <import resource="classpath:PrevalenzaAutomaticaDao-context.xml" />
+    <import resource="classpath:PrevalenzaManualeDao-context.xml" />
+    <import resource="classpath:QueryContestoDao-context.xml" />
+    <import resource="classpath:RapportiAssociabiliAccountDao-context.xml" />
+    <import resource="classpath:RapportiAssociabiliDao-context.xml" />
+    <import resource="classpath:RapportiAssociabiliIndirizzoDao-context.xml" />
+    <import resource="classpath:RapportiAssociabiliMailDao-context.xml" />
+    <import resource="classpath:RapportiAssociabiliTelefonoDao-context.xml" />
+    <import resource="classpath:RapportiDao-context.xml" />
+    <import resource="classpath:RapportiListaDao-context.xml" />
+    <import resource="classpath:RapportiListaInquiryDao-context.xml" />
+    <import resource="classpath:RegolaCondizioneDao-context.xml" />
+    <import resource="classpath:RegoleDao-context.xml" />
+    <import resource="classpath:RegoleMotoriChiaveDao-context.xml" />
+    <import resource="classpath:RelazioneContattiDao-context.xml" />
+    <import resource="classpath:RelazioneDao-context.xml" />
+    <import resource="classpath:RelazioniAnagraficheDao-context.xml" />
+    <import resource="classpath:RelazioniAnagraficheListaDao-context.xml" />
+    <import resource="classpath:RelazioniAnagraficheListaInquiryDao-context.xml" />
+    <import resource="classpath:RelazioniContabiliDao-context.xml" />
+    <import resource="classpath:RelazioniContabiliListaDao-context.xml" />
+    <import resource="classpath:RelazioniContabiliPresentiListaDao-context.xml" />
+    <import resource="classpath:RepositoriIdChiaviDao-context.xml" />
+    <import resource="classpath:RicercaAnagraficaDao-context.xml" />
+    <import resource="classpath:RicercaAnagraficaCodiciDao-context.xml" />
+    <import resource="classpath:RicercaCodiciDueDao-context.xml" />
+    <import resource="classpath:RicercaCodiciQuattroDao-context.xml" />
+    <import resource="classpath:RicercaTriplettaCodiciDao-context.xml" />
+    <import resource="classpath:RipristinoControparteDao-context.xml" />
+    <import resource="classpath:RuoliControparteDao-context.xml" />
+    <import resource="classpath:RuleDao-context.xml" />
+    <import resource="classpath:RulesetDao-context.xml" />
+    <import resource="classpath:SchemaAbilitazioniDao-context.xml" />
+    <import resource="classpath:SettoriEconomiciControparteDao-context.xml" />
+    <import resource="classpath:SinonimiLocalitaDao-context.xml" />
+    <import resource="classpath:SndgSuggeritiDao-context.xml" />
+    <import resource="classpath:SpecificaCollegamentoDao-context.xml" />
+    <import resource="classpath:SportelliDao-context.xml" />
+    <import resource="classpath:StatoNdgControparteDao-context.xml" />
+    <import resource="classpath:StatoNdg-GenericDao-context.xml" />
+    <import resource="classpath:StatusDiRapportoDao-context.xml" />
+    <import resource="classpath:StatusInseribiliDao-context.xml" />
+    <import resource="classpath:StatusNdgControparteDao-context.xml" />
+    <import resource="classpath:StrutturaCensimentoDao-context.xml" />
+    <import resource="classpath:SuperNdgAbbinatiDao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche0Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche1Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche2Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche3Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche4Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche5Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche6Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche7Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche8Dao-context.xml" />
+    <import resource="classpath:SviluppoChiaviGeneriche9Dao-context.xml" />
+    <import resource="classpath:TabellaNgtatd1Dao-context.xml" />
+    <import resource="classpath:TabellaNgtatd1DetailDao-context.xml" />
+    <import resource="classpath:TabellaNgtatd2Dao-context.xml" />
+    <import resource="classpath:TabellaTSCDao-context.xml" />
+    <import resource="classpath:TabellaTSCDetailDao-context.xml" />
+    <import resource="classpath:TabellaTZ1Dao-context.xml" />
+    <import resource="classpath:TabellaTZ2Dao-context.xml" />
+    <import resource="classpath:TabellaTZ3Dao-context.xml" />
+    <import resource="classpath:TelefoniControparteDao-context.xml" />
+    <import resource="classpath:TelefoniControparteDescrizioniDao-context.xml" />
+    <import resource="classpath:TipoClassificazioneAmmDao-context.xml" />
+    <import resource="classpath:TipiCollegamentoDisponibiliDao-context.xml" />
+    <import resource="classpath:TipoRapportoDao-context.xml" />
+    <import resource="classpath:TipoClassificazioneDao-context.xml" />
+    <import resource="classpath:UsiAssociabiliDao-context.xml" />
+    <import resource="classpath:UsiControparteDao-context.xml" />
+    <import resource="classpath:UsiRapportoDao-context.xml" />
+    <import resource="classpath:VariazioniControparteDao-context.xml" />
+    <import resource="classpath:VisteGruppoSoggettiCollegatiDao-context.xml" />
+
+    <import resource="classpath:codePageMap-context.xml" />
+    <import resource="classpath:d401-query-context.xml" />
+    <import resource="classpath:domini-query-context.xml" />
+    <import resource="classpath:iso-query-context.xml" />
+    <import resource="classpath:legami-query-context.xml" />
+    <import resource="classpath:motori-query-context.xml" />
+    <import resource="classpath:query-context.xml" />
+    <import resource="classpath:rule-queries-context.xml" />
+
+    <import resource="classpath:TabellaPerAttributo.xml"/>
+    <import resource="classpath:MappingAttributi.xml" />
+    <import resource="classpath:MappingCampi.xml" />
+    <import resource="classpath:MappingCampiLegami.xml" />
+    <import resource="classpath:MappingDomini.xml" />
+    <import resource="classpath:MappingTabelleChiavi.xml" />
+    <import resource="classpath:InformazioniPerDato.xml" />
+    <import resource="classpath:DatiAbbinamento.xml" />
+
+    <import resource="classpath:AccountRelazioniMapping-context.xml" />
+    <import resource="classpath:AggiornamentoFatcaMapping-context.xml" />
+    <import resource="classpath:AggTitolariEffettiviMapping-context.xml" />
+    <import resource="classpath:CensimentoMapping-context.xml" />
+    <import resource="classpath:EmailRelazioniMapping-context.xml" />
+    <import resource="classpath:GestioneNuovoRapportoMapping-context.xml" />
+    <import resource="classpath:GestioneRapportoMapping-context.xml" />
+    <import resource="classpath:IndirizzoRelazioniMapping-context.xml" />
+    <import resource="classpath:TelefonoRelazioniMapping-context.xml" />
+    <import resource="classpath:VariazioneDatiAnagraficiTipoNdgMapping-context.xml" />
+
+    <bean id="datiParticolariQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-dati-particolari.properties"/>
+    </bean>
+
+    <bean id="documentiQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-documenti.properties"/>
+    </bean>
+
+    <bean id="documentiAltroQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-documenti-altro.properties"/>
+    </bean>
+
+    <bean id="contattiQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-contatti.properties"/>
+    </bean>
+
+    <bean id="contropartiQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-controparti.properties" />
+    </bean>
+
+    <bean id="espansioneContenutoInformativoControparteAltroQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-espansione-contenuto-informativo-controparte-altro.properties" />
+    </bean>
+
+    <bean id="legamiQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-legami.properties" />
+    </bean>
+
+    <bean id="ricercaCodiciDueQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-ricerca-codici-due.properties" />
+    </bean>
+
+    <bean id="ricercaCodiciQuattroQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-ricerca-codici-quattro.properties" />
+    </bean>
+
+    <bean id="ricercaTriplettaCodiciQueries" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:db-queries-ricerca-codici-tripletta.properties" />
+    </bean>
+
+    <bean id="fonteProvider" class="it.eng.visage.validation.FonteAzioneProviderPojoImpl" />
+    <bean id="serviceLegamiNormativiEInformativi" class="it.eng.sclibs.visage.service.legami.LegamiNormativiEInformativiService" />
+    <bean id="ricercaAnagraficaService" class="it.eng.sclibs.visage.services.RicercaAnagraficaService" />
+    <bean id="sviluppoChiaviService" class="it.eng.sclibs.visage.services.SviluppoChiaviService" />
+    <bean id="sviluppoChiaviUtils" class="it.eng.sclibs.visage.business.utils.SviluppoChiaviUtils" />
+    <bean id="dominiService" class="it.eng.sclibs.visage.services.DominiService" />
+    <bean id="chiaviDiRicercaAnagraficaBaseCognomiService" class="it.eng.sclibs.visage.services.ChiaviDiRicercaAnagraficaBaseCognomiService" />
+    <bean id="chiaviDiRicercaAnagraficaBaseNomiService" class="it.eng.sclibs.visage.services.ChiaviDiRicercaAnagraficaBaseNomiService" />
+    <bean id="chiaviDiRicercaAnagraficaBaseRagioniSocialiService" class="it.eng.sclibs.visage.services.ChiaviDiRicercaAnagraficaBaseRagioniSocialiService" />
+    <bean id="dizionarioCognomiService" class="it.eng.sclibs.visage.services.DizionarioCognomiService" />
+    <bean id="dizionarioNomiService" class="it.eng.sclibs.visage.services.DizionarioNomiService" />
+    <bean id="dizionarioIntestazioniSocietaService" class="it.eng.sclibs.visage.services.DizionarioIntestazioniSocietaService" />
+    <bean id="associazioneNdgChiaviCognomiService" class="it.eng.sclibs.visage.services.AssociazioneNdgChiaviCognomiService" />
+    <bean id="associazioneNdgChiaviNomiService" class="it.eng.sclibs.visage.services.AssociazioneNdgChiaviNomiService" />
+    <bean id="associazioneNdgIntetazioniSocietaService" class="it.eng.sclibs.visage.services.AssociazioneNdgIntetazioniSocietaService" />
+    <bean id="repositoriIdChiaviService" class="it.eng.sclibs.visage.services.RepositoriIdChiaviService" />
+    <bean id="ricercaAnagraficaCodiciService" class="it.eng.sclibs.visage.services.RicercaAnagraficaCodiciService" />
+    <bean id="omonimoService" class="it.eng.sclibs.visage.services.OmonimoService" />
+    <bean id="visteGruppoSoggettiCollegatiService" class="it.eng.sclibs.visage.service.VisteGruppoSoggettiCollegatiService" />
+    <bean id="diRaccordoSndgNdgService" class="it.eng.sclibs.visage.service.DiRaccordoSndgNdgService" />
+    <bean id="legamiDiGruppoService" class="it.eng.sclibs.visage.service.LegamiDiGruppoService" />
+    <bean id="collegamentiPresentiService" class="it.eng.sclibs.visage.service.legami.CollegamentiPresentiService" />
+    <bean id="legamiNormativiEInformativiControparteService" class="it.eng.sclibs.visage.service.legami.LegamiNormativiEInformativiControparteService" />
+    <bean id="codiciVariTransformer" class="it.eng.sclibs.visage.transformer.CodiciVariTransformer" />
+    <bean id="estrazioniDao" class="it.eng.sclibs.visage.motori.model.dao.estrazioni.EstrazioniNdgDao" />
+    <bean id="serviceRapporti" class="it.eng.sclibs.visage.rapporti.service.RapportiService" />
+    <bean id="relazioniAnagraficheService" class="it.eng.sclibs.visage.rapporti.service.RelazioniAnagraficheService" />
+    <bean id="serviceChiaveRecord" class="it.eng.sclibs.visage.services.ChiaveRecordService" />
+    <bean id="motoreAbbinamentoDao" name="motoreAbbinamentoDao" class="it.eng.sclibs.visage.motori.model.dao.motoreAbbinamento.MotoreAbbinamentoDao" />
+    <bean id="motoreAbbinamentoService" class="it.eng.sclibs.visage.motori.service.MotoreAbbinamentoService" />
+    <bean id="espansioneContenutoInformativoControparteService" class="it.eng.sclibs.visage.controparti.service.EspansioneContenutoInformativoControparteService" />
+    <bean id="ruleLoader" class="it.eng.sclibs.visage.rule.engine.loader.RuleLoader" />
+    <bean id="ruleManager" class="it.eng.sclibs.visage.rule.engine.services.RuleManager" />
+    <bean id="checkCodici" class="it.eng.sclibs.visage.utility.controlli.CheckCodici" />
+    <bean id="conversionService" class="it.eng.sclibs.visage.isp.latinizzatore.LatinizzatoreService" />
+    <bean id="TabGenDao" class="it.eng.sclibs.visage.model.dao.TabGenDao" />
+
+    <bean name="serviceConfig" class="it.eng.visage.web.config.ServiceConfig">
+        <property name="checkLengthNeeded" value="true" />
+        <property name="keyNeeded" value="true" />
+    </bean>
+
+    <util:map id="daoRefs" key-type="java.lang.Class" />
+
+    <bean id="superNdgAbbinatiConDescrizioniDao" class="it.eng.sclibs.visage.controparti.model.dao.SuperNdgAbbinatiConDescrizioniDao">
+        <property name="entityMeta">
+            <ref bean="anagrafeDiGruppo"/>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ricercaCodiciDueEntity" class="it.eng.visage.dao.EntityMeta">
+        <constructor-arg>
+            <value>OAOT2</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="tablePrefixName" />
+        </constructor-arg>
+        <constructor-arg>
+            <value>codice</value>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="codice" value="CODICE" />
+            </map>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <value>GRUPPO</value>
+                <value>AZIENDA</value>
+                <value>CODICE</value>
+                <value>TIPO_COD2</value>
+                <value>DATA_INIZIO</value>
+                <value>DATA_FINE</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="ricercaCodiciDueDao" class="com.intesasanpaolo.diwa0.dao.RicercaCodiciDueDao">
+        <property name="entityMeta">
+            <ref bean="ricercaCodiciDueEntity"/>
+        </property>
+    </bean>
+
+</beans>

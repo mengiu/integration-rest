@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="documentiAltroEntity" class="it.eng.visage.dao.EntityMeta">
+        <constructor-arg>
+            <value>AAAQG</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="tablePrefixName" />
+        </constructor-arg>
+        <constructor-arg>
+            <value>codDocumIden</value>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="gruppo" value="GRUPPO" />
+                <entry key="azienda" value="AZIENDA" />
+                <entry key="ndg" value="NDG" />
+                <entry key="codDocumIden" value="COD_DOCUM_IDEN" />
+                <entry key="numDocumIdent" value="NUM_DOCUM_IDENT" />
+                <entry key="dataRilDoc" value="DATA_RIL_DOC" />
+                <entry key="dataPresDoc" value="DATA_PRES_DOC" />
+                <entry key="dataScadDoc" value="DATA_SCAD_DOC" />
+                <entry key="descrStatoDoc" value="DESCR_STATO_DOC" />
+                <entry key="localitaDoc1" value="LOCALITA_DOC_1" />
+                <entry key="localitaProvDoc" value="LOCALITA_PROV_DOC" />
+                <entry key="provincia" value="PROVINCIA" />
+                <entry key="capProv" value="CAP_PROV" />
+                <entry key="codProvinciaInd" value="COD_PROVINCIA_IND" />
+                <entry key="codStatoDoc" value="COD_STATO_DOC" />
+                <entry key="codLocalita1" value="COD_LOCALITA_1" />
+                <entry key="codEnteDoc" value="COD_ENTE_DOC" />
+                <entry key="descrStatoEnte" value="DESCR_STATO_ENTE" />
+                <entry key="codStatoEnte" value="COD_STATO_ENTE" />
+                <entry key="ndgPresDoc" value="NDG_PRES_DOC" />
+                <entry key="statoDoc" value="STATO_DOC" />
+                <entry key="certificatoDoc" value="CERTIFICATO_DOC" />
+                <entry key="dataCertificDoc" value="DATA_CERTIFIC_DOC" />
+                <entry key="noteDoc" value="NOTE_DOC" />
+                <entry key="causaleEstinzione" value="CAUSALE_ESTINZIONE" />
+                <entry key="datoForzato" value="DATO_FORZATO" />
+            </map>
+        </constructor-arg>
+        <constructor-arg>
+            <list>
+                <value>GRUPPO</value>
+                <value>AZIENDA</value>
+                <value>NDG</value>
+                <value>COD_DOCUM_IDEN</value>
+                <value>NUM_DOCUM_IDENT</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="DocumentiAltroDao" class="com.intesasanpaolo.diwa0.dao.DocumentiAltroDao">
+        <property name="entityMeta">
+            <ref bean="documentiAltroEntity"/>
+        </property>
+    </bean>
+
+</beans>

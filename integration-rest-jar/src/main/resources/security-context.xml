@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="jwtIdentityProvider" class="it.eng.sclibs.security.SimpleIdentityProvider">
+        <property name="currentIdentity">
+            <bean class="it.eng.sclibs.security.SimpleUserIdentity">
+                <property name="gruppo">
+                    <value>ISP</value>
+                </property>
+                <property name="azienda">
+                    <value>90000</value>
+                </property>
+                <property name="matricola">
+                    <value>U0I9999</value>
+                </property>
+                <property name="nominativo">
+                    <value>John Doe</value>
+                </property>
+                <property name="sportello">
+                    <value>003500</value>
+                </property>
+                <property name="ambito">
+                    <value>90000</value>
+                </property>
+                <property name="canale">
+                    <value/>
+                </property>
+                <property name="ruoli">
+                    <value/>
+                </property>
+                <property name="profili">
+                    <value/>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="jwtUtil" class="it.eng.sclibs.security.JwtUtil"/>
+
+    <bean id="actorSystem" class="akka.actor.ActorSystem" factory-method="create" scope="singleton"/>
+    <bean id="handlerLoader" class="it.eng.sclibs.eventmanager.akka.spring.SpringEventHandlerLoader" scope="singleton" />
+    <bean id="serviceFactory" class="it.eng.sclibs.eventmanager.api.SimpleServiceFactory" scope="singleton"/>
+
+    <bean id="eventManager" class="it.eng.sclibs.eventmanager.akka.AkkaEventManagerService" scope="singleton" destroy-method="destroy">
+        <constructor-arg ref="actorSystem"/>
+        <constructor-arg ref="handlerLoader"/>
+        <constructor-arg ref="serviceFactory"/>
+    </bean>
+
+    <bean id="allowedProfiles" class="java.lang.String">
+        <constructor-arg>
+            <value>#{profilesConfig.PROFILES_ALLOWED}</value>
+        </constructor-arg>
+    </bean>
+    <util:properties id="profilesConfig" location="classpath:/env/${Y1.Stage}/profiles-allowed.properties"/>
+
+    <bean id="allowedRoles" class="java.lang.String">
+        <constructor-arg>
+            <value>#{rolesConfig.ROLES_ALLOWED}</value>
+        </constructor-arg>
+    </bean>
+    <util:properties id="rolesConfig" location="classpath:/env/${Y1.Stage}/roles-allowed.properties"/>
+
+</beans>
