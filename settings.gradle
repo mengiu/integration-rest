@@ -1,0 +1,8 @@
+rootProject.name = 'integration-rest'
+include ':integration-ear'
+include ':integration-war'
+include ':integration-jar'
+
+project(':integration-rest-ear').projectDir = "$rootDir/integration-rest-ear" as File
+project(':integration-rest-war').projectDir = "$rootDir/integration-rest-war" as File
+project(':integration-rest-jar').projectDir = "$rootDir/integration-rest-jar" as File
