@@ -16,7 +16,7 @@
 		<json-path-version>2.2.0</json-path-version>
 		<servlet-api-version>3.0.1</servlet-api-version>
 		<springfox-version>2.6.0</springfox-version>
-		<jackson-version>2.8.11.1</jackson-version>
+		<jackson-version>2.9.1</jackson-version>
 		<spring-version>4.3.5.RELEASE</spring-version>
 		<spring-test-version>4.2.2.RELEASE</spring-test-version>
 		<project-version>0.1-O0000167589</project-version>
