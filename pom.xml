@@ -18,7 +18,7 @@
 		<springfox-version>2.6.0</springfox-version>
 		<jackson-version>[2.9.10.4,)</jackson-version>
 		<spring-version>5.2.20.RELEASE</spring-version>
-		<spring-test-version>4.2.2.RELEASE</spring-test-version>
+		<spring-test-version>5.2.10.RELEASE</spring-test-version>
 		<project-version>0.1-O0000167589</project-version>
 		<ear-version>7.0</ear-version>
 		<maven-ear-version>7</maven-ear-version>
